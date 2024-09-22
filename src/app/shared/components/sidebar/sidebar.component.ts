@@ -11,7 +11,11 @@ export class SidebarComponent {
     constructor(private gifsService:GifsService){}
 
     //Al ser privado el servicio de Giff necesito un Getter para poder usarlo en el HTML
-    public get tags(){
+    public get tags(): string[]{
         return this.gifsService.tagsHistory;
+    }
+
+    public searchTag(tag: string): void{
+        this.gifsService.searchTag(tag);
     }
 }

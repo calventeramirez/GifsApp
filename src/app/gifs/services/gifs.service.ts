@@ -30,7 +30,7 @@ export class GifsService {
 
   public searchTag(tag:string):void{
     if(tag.length == 0) return; //Para que no entre consultas vacias
-
+    this.organizeHistory(tag);
     const params = new HttpParams()
       .set('api_key', this.apiKey)
       .set('limit', '10')
